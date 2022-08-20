@@ -6,7 +6,7 @@ using namespace std;
  * Complexities:
  *
  * * Time Complexity : O(log n)
- * * Space Complexity : 0(1)
+ * * Space Complexity : O(1)
  */
 
 int recursiveBinarySearch(int l, int r, int arr[], int key) {

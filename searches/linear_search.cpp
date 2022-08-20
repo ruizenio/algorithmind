@@ -1,9 +1,17 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-int linearSearch(int arr[], int size, int key) {
-    for (int i = 0; i < size; i++) {
+/**
+ * Complexities:
+ * 
+ * * Time Complexity : O(n)
+ * * Space Complexity : O(1)
+ */
+
+int linearSearch(vector<int> arr, int key) {
+    for (int i = 0; i < arr.size(); i++) {
         if (arr[i] == key) {
             return i;
         }
@@ -12,11 +20,17 @@ int linearSearch(int arr[], int size, int key) {
 }
 
 int main() {
-    int size = 5, arr[] = {2, 3, 4, 10, 40};
+    vector<int> arr;
 
-    assert(linearSearch(arr, size, 10) == 3);
-    assert(linearSearch(arr, size, 1) == -1);
-    assert(linearSearch(arr, size, 44) == -1);
+    arr.push_back(2);
+    arr.push_back(3);
+    arr.push_back(4);
+    arr.push_back(10);
+    arr.push_back(40);
+
+    assert(linearSearch(arr, 10) == 3);
+    assert(linearSearch(arr, 1) == -1);
+    assert(linearSearch(arr, 44) == -1);
 
     cout << "All tests passed ✅" << endl;
 
