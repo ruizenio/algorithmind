@@ -10,13 +10,26 @@ using namespace std;
  * * Space Complexity : O(1)
  */
 
-int linearSearch(vector<int> arr, int key) {
+int commonLinearSearch(vector<int> arr, int key) {
     for (int i = 0; i < arr.size(); i++) {
         if (arr[i] == key) {
             return i;
         }
     }
     return -1;
+}
+
+int sentinelLinearSearch(vector<int> arr, int key) {
+    arr.push_back(key);
+    int index = 0;
+    while (arr[index] != key) {
+        index += 1;
+    }
+    arr.pop_back();
+    if (index == arr.size()) {
+        return -1;
+    }
+    return index;
 }
 
 int main() {
@@ -28,9 +41,14 @@ int main() {
     arr.push_back(10);
     arr.push_back(40);
 
-    assert(linearSearch(arr, 10) == 3);
-    assert(linearSearch(arr, 1) == -1);
-    assert(linearSearch(arr, 44) == -1);
+    assert(commonLinearSearch(arr, 10) == 3);
+    assert(sentinelLinearSearch(arr, 10) == 3);
+
+    assert(commonLinearSearch(arr, 1) == -1);
+    assert(sentinelLinearSearch(arr, 1) == -1);
+
+    assert(commonLinearSearch(arr, 44) == -1);
+    assert(sentinelLinearSearch(arr, 44) == -1);
 
     cout << "All tests passed ✅" << endl;
 
