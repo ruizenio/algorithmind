@@ -26,13 +26,7 @@ int doubleLinearSearch(vector<int> arr, int key) {
 }
 
 int main() {
-    vector<int> arr;
-
-    arr.push_back(2);
-    arr.push_back(3);
-    arr.push_back(4);
-    arr.push_back(10);
-    arr.push_back(40);
+    vector<int> arr = {{2, 3, 4, 10, 40}};
 
     assert(doubleLinearSearch(arr, 10) == 3);
     assert(doubleLinearSearch(arr, 1) == -1);
