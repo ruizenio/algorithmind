@@ -11,8 +11,7 @@ using namespace std;
  * * Space Complexity: O(1)
  */
 
-int interpolationSearch(vector<int> arr, int num)
-{
+int interpolationSearch(vector<int> arr, int num) {
 	int size = arr.size();
 	int low = 0, high = size - 1;
 
